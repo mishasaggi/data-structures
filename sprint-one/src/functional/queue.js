@@ -10,9 +10,10 @@ var Queue = function(){
   };
 
   someInstance.dequeue = function(){
-    if (queueTail !== queueHead) {
+    if ( someInstance.size() > 0 ) {
       var result = storage[queueHead];
       queueHead++;
+      delete queueHead;
       return result;
     }
   };

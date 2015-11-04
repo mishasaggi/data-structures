@@ -16,7 +16,7 @@ stackMethods.push = function(value) {
 };
 
 stackMethods.pop = function() {
-  if ( this.positionPointer > 0 ) {
+  if ( this.size() > 0 ) {
     this.positionPointer--;
     var result = this.storage[this.positionPointer];
     delete this.storage[this.positionPointer];
