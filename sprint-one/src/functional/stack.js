@@ -11,9 +11,10 @@ var Stack = function(){
   };
 
   someInstance.pop = function(){
-    if (someInstance.size() > 0) {
+    if ( someInstance.size() > 0 ) {
       positionPointer--;
       var result = storage[positionPointer];
+      delete storage[positionPointer];
       return result;
     } else return;
   };
