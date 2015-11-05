@@ -14,15 +14,11 @@ treeMethods.addChild = function(value){
   this.children.push(Tree(value));
 };
 
-treeMethods.contains = function(target, currentNode){
+treeMethods.contains = function(target){
   //recursively search through children arrays
-  currentNode = currentNode || this;
-  if (currentNode.value === target) return true;
-  if (currentNode.children.length > 0) {
-    for (var i = 0; i < currentNode.children.length; i++){
-      if (currentNode.children[i].value === target) return true;
-        else return this.contains(target, currentNode.children[i])
-      }
+  if (this.value === target) return true;
+    for (var i = 0; i < this.children.length; i++){
+      if (this.children[i].contains(target)) return true;
     }
     return false;
 };
@@ -30,4 +26,6 @@ treeMethods.contains = function(target, currentNode){
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ * addChild: O(1)
+ * contains: O(x^n)
  */
