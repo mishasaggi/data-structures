@@ -53,4 +53,15 @@ describe('advanced tree', function() {
     expect(tree.contains(8)).to.equal(true);
   });
 
+  it('should traverse and execute a callback on every value', function(){
+    var array = [];
+    var func = function(value){ array.push(value); };
+    tree.addChild(5);
+    tree.addChild(2);
+    tree.addChild(3);
+    tree.addChild(6);
+    tree.traverse(func);
+    expect(array).to.eql([5,2,3,6]);
+  });
+
 });
