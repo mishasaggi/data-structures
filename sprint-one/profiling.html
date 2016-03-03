@@ -1,0 +1,58 @@
+<!-- performance comparison -->
+
+<!doctype html>
+<meta charset="utf8">
+<html>
+  <head>
+    <style>
+      body {
+        width: 120%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+     <script src="../sprint-one/src/functional/stack.js">
+      var myStackFunctional = Stack();
+      for(var i =0; i< 100000000000; i++) {
+        myStackFunctional.push('item');
+      }
+     </script>
+
+     <script src="../sprint-one/src/functional-shared/stack.js">
+      var myStackFunctionalShared = Stack();
+      for(var i =0; i< 100000000000; i++) {
+        myStackFunctional.push('sharedItem');
+      }
+     </script>
+
+     <script src="../sprint-one/src/prototypal/stack.js">
+      var myStackFunctionalPrototypal = Stack();
+      for(var i =0; i< 100000000000; i++) {
+        myStackFunctional.push('protoItem');
+      }
+     </script>
+
+     <script src="../sprint-one/src/pseudoclassical/stack.js">
+      var myStackFunctionalPseudoclassical = new Stack();
+      for(var i =0; i< 100000000000; i++) {
+        myStackFunctional.push('classicalItem');
+      }
+     </script>
+
+  </head>
+  <body>
+  <div>
+    functional
+  </div>
+  <div>
+    functional-shared
+  </div>
+  <div>
+    prototypal
+  </div>
+  <div>
+    pseudoclassical
+  </div>
+  
+  </body>
+</html>
